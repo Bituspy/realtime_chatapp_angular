@@ -1,0 +1,31 @@
+<body>
+<div class="table-container">
+    <button class="logout-button" (click)="logout()">Logout</button>
+ <div class="users-container">
+  <h3>Online Users:</h3>
+
+  <ul>
+    <li *ngFor="let user of onlineUsers">
+      <div *ngIf="Visitorusername == user.username"><span class="online-dot"></span>You</div>
+      <div *ngIf="Visitorusername != user.username"><span class="online-dot"></span>{{ user.username }}</div>
+    </li>
+  </ul>
+</div>
+
+  <div class="chat-container" #chatContainer>
+    <div class="message-scroll" #messageScroll>
+      <!-- Messages will be displayed here -->
+      <div class="message-container" *ngFor="let message of messages">
+        <div [ngClass]="{'message-username': message.sender !== Visitorusername, 'sender': message.sender === Visitorusername}">{{message.sender}}</div>
+        <div [ngClass]="{'my-message': message.sender === Visitorusername, 'other-message': message.sender !== Visitorusername}">
+          {{ message.text }}
+        </div>
+      </div>
+    </div>
+    <input class="message-input" type="text" placeholder="Type your message..." [(ngModel)]="newMessage"   (keyup.enter)="sendMessage()" />
+    <button class="send-button" (click)="sendMessage()">Send</button>
+  </div>
+
+ 
+</div>
+</body>

@@ -1,0 +1,14 @@
+<body>
+
+<div class="login-container">
+    <div class="title">StrangerConnect</div>
+    <p>Connect with Friendly Strangers</p>
+  <form (ngSubmit)="login()">
+    <div class="input-container">
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" [(ngModel)]="username" required>
+    </div>
+    <button type="submit">Login</button>
+  </form>
+</div>
+</body>

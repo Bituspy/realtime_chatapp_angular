@@ -1,0 +1,14 @@
+# Node.js (Backend)
+/node_modules/
+/package-lock.json
+
+# Angular (Frontend)
+/angular_chat/node_modules/
+/angular_chat/dist/
+/angular_chat/.angular-cli.json
+/angular_chat/.npmrc
+/angular_chat/e2e/
+
+# Other general ignores (add any other patterns as needed)
+/dist/
+/node_modules/
